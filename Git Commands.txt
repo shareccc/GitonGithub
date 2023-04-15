@@ -1,0 +1,55 @@
+Git 命令：
+1. 工作区、暂存区、版本库 工作流流向
+git add		#添加到暂存区索引，对象库
+git commit	#添加到版本库索引，指向对象库，即本地仓
+git reset HEAD	#将暂存区目录替换为版本库目录
+git rm --cached	#清空暂存区索引，索引指向对象
+git checkout .	#将暂存区索引指向对象替换工作区的对象
+git checkout HEAD .	#将版本库索引指向对象替换暂存区、工作区对象
+
+2. 仓库创建
+git init [newrepofile]		#初始化仓库newrepofile
+	git add *.c
+	git commit -m 'commit message! 版本version'
+git clone <repo> [<directory>]	#拷贝项目至本地，类似于checkout，也能创建仓库
+git config [--list | -e | --global]	#配置文件
+
+3. 工作区、暂存区、版本库（本地仓）、远程仓 工作流流向
+git rm <file>		#删除本地区、暂存区中文件file
+rm <file>			#删除本地区文件file
+git mv <file>		#移动或rename本地区、暂存区文件
+mv <file>			#移动或rename本地区
+git status			#查看仓库当前状态
+git diff			#比较工作区、暂存区中文件的差异
+git reset			#回退版本
+
+git log [--oneline]		#查看提交日志
+git blame <file>		#以列表形式查看在指定文件修改日志
+
+git remote		#操作远程仓库
+git fetch			#从远程获取代码库
+git pull			#下载远程代码合并
+git push			#上传远程代码合并
+
+4. 分支管理: 多个仓库之间的切换、合并、删除
+git branch [-d] (branchname)	#创建分支
+git checkout (branchname)		#切换分支
+git merge (branchname)		#将branchname合并至当前分支
+#当合并冲突时，使用git diff查看冲突，手动修改
+
+5. 标签管理
+git tag [-a] v1.0		#使用-a创建一个带注解的标签，标签标志着当前仓库状态
+git tag 			#查看标签
+
+6. 远程仓库操作
+git remote -v
+git remote add [shortname] [url]		#为[url]创建一个别名，便于引用
+git remote rm [shortname]
+git push -u [shortname] [reponame]		#code推送至shortname中的reponame分支
+gti fetch | merger [shortname]
+
+7. Git服务器搭建
+8. 可视化界面工具Sourcetree、Github Desktop、TortoiseGit等
+    远程仓库Bitbucket、GitHub、Gitlab等
+https://www.runoob.com/git/git-tutorial.html
+
